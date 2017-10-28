@@ -4,9 +4,15 @@ TP1 - Notes
 --------------
 
 1) install VM with raspbian (vanilla) normal kernel
+
 2) download rt-tests
+	$ git clone https://kernel.googlesource.com/pub/scm/utils/rt-tests/rt-tests
+	
+3) Checkout to a stable version branch
+	$ git checkout stable/v1.0
+	
 4) make to compile files
-	install libnuma-dev
+	install libnuma-dev in case u need it .. so first try make then see.
 	$sudo apt-get install libnuma-dev
 	$make
 
@@ -51,4 +57,20 @@ test_non_rtos_no_load.png
 
 12) Now to give more details -> increase number of points to 100000
 use draw_hist_100000pts.sh to draw the second one
+
+
+NB: Date accuracy is something so crucial that needs to be set before doing operations (clone ...) it may need certificates that verify your timestamp
+to fix this use: 
+   $ sudo date -s "Oct 28 Sat 23:38:00"
+   
+   
+*EXAMPLE:*
+git clone https://kernel.googlesource.com/pub/scm/utils/rt-tests/rt-tests
+Cloning into 'rt-tests'...
+fatal: unable to access 'https://kernel.googlesource.com/pub/scm/utils/rt-tests/rt-tests/': server certificate verification failed. CAfile: /etc/ssl/certs/ca-certificates.crt CRLfile: none
+
+
+
+
+
 
